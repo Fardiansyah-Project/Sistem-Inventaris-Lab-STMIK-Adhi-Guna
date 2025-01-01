@@ -5,8 +5,12 @@ class inventarisService {
 
         let dataTable = $('#dataTable').DataTable({
             "responsive": true,
-            "lengthChange": false,
+            "lengthChange": true,
             "autoWidth": false,
+            "paging": true,
+            "pageLength": 5,
+            "order": [[0, 'asc']],
+            "lengthMenu": [[5, 10, 25, 50, -1,], [5, 10, 25, 50, 'All']]
         })
 
         let tableBody = '';
