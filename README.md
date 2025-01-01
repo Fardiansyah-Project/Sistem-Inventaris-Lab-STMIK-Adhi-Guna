@@ -1,12 +1,12 @@
 
 ## About 
-PENA PROFILE V2
+Sistem-Inventaris-Lab-STMIK-Adhi-Guna
 
 #### Installation
 copy and paste in your terminal
 
 ```bash
-git clone https://github.com/penaagp-dev/Pena-Profile
+git clone https://github.com/Fardiansyah-Project/Sistem-Informasi-Lab-STMIK-Adhi-Guna
 ```
 
 install composer
@@ -14,12 +14,6 @@ install composer
 ```bash
 composer install
 ```
-install node package
-
-```bash
-npm install
-```
-
 
 generate key
 
@@ -27,34 +21,16 @@ generate key
 php artisan key:generate
 ```
 
-### Migration table and seeder
+### Melakukan Migration table 
 
 ```bash
 php artisan migrate:fresh --seed
 ```
 
-### Run Project
+### Jalankan Project
 
 ```bash
 php artisan serve
 ```
 
-```bash
-npm run dev
-```
 
-
-## If you using docker run this command
-
-```bash
-docker-compose up -d
-```
-
-Enable this code in `vite.config.js`
-
-```bash
- server: {
-        host: '0.0.0.0',
-        port: 5173
-    }
-```
