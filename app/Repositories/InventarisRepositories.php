@@ -114,10 +114,15 @@ class InventarisRepositories implements InventarisInterfaces
                 return $this->dataNotFound();
             }
 
-            $inventaris->status = 'ready';
             $inventaris->stock += $data->quantity;
-            $inventaris->save();
 
+            $activeBorrowCount = $this->borrowModel->where('id_inventaris', $inventaris->id)->count();
+            // Jika tidak ada peminjaman aktif, ubah status menjadi 'ready'
+            if ($activeBorrowCount <= 1) {
+                $inventaris->status = 'ready';
+            }
+
+            $inventaris->save();
             $data->delete();
 
             DB::commit();
